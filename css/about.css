@@ -1,0 +1,129 @@
+.about {
+  padding: 100px 15px;
+  background-color: #fff;
+}
+
+.img {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.img img {
+  width: 100%;
+  border-radius: 4px;
+  display: block;
+}
+
+.text {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 30px;
+}
+
+.text h4 {
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #01143e;
+}
+
+.text h6 {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 0 25px;
+  color: #01143e;
+}
+
+.text h6 span {
+  color: #5f88e0;
+  position: relative;
+}
+
+.text h6 span::before {
+  content: "";
+  left: 0;
+  right: 90%;
+  position: absolute;
+  height: 2px;
+  bottom: 0px;
+  transition: all 0.5s ease;
+}
+
+.text h6 span:hover::before {
+  content: "";
+  left: 0;
+  right: 0;
+  position: absolute;
+  height: 2px;
+  background-color: #5f88e0;
+  bottom: 0px;
+}
+
+.text p {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #838383;
+}
+
+.skills {
+  padding: 20px 0px;
+}
+
+.skills h6 {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0 0 25px;
+  color: #01143e;
+}
+
+.skills-list {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-ul li {
+  font-size: 14px;
+  font-weight: 400;
+  color: #838383
+}
+
+.fa-ul .fa-li {
+  font-size: 14px;
+  font-weight: 400;
+  color: #838383
+}
+
+.social {
+  padding-top: 10px;
+}
+
+.social a {
+  height: 30px;
+  width: 30px;
+  color: #01143e;
+  background-color: transparent;
+  display: inline-block;
+  border: 1px solid #01143e;
+  border-radius: 4px;
+  line-height: 28px;
+  text-align: center;
+  margin: 0px 1px;
+  transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+}
+
+.social a:hover {
+  background-color: #01143e;
+  color: #fff;
+}
+
+.social a .fa {
+  font-size: 14px;
+}
+
+.social a .fa:hover {
+  background-color: #01143e;
+  color: #fff;
+}
