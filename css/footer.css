@@ -1,0 +1,121 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 9%;
+  background-color: var(--second-bg-color);
+}
+
+.footer-text,
+.footer-icontop {
+  position: relative;
+}
+
+.footer-text p {
+  font-size: 1.6rem;
+}
+
+.footer-icontop a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.footer-icontop a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--second-bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.footer-icontop a:hover::before {
+  width: 100%;
+}
+
+.footer-icontop a i {
+  font-size: 2.4rem;
+  color: var(--bg-color);
+  transition: 0.5s;
+}
+
+.footer-icontop a:hover i {
+  color: var(--main-color);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social a {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.8rem;
+  background-color: var(--main-color);
+  border: 0.2rem solid var(--main-color);
+  border-radius: 0.6rem;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.footer-social a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--second-bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.footer-social a:hover::before {
+  width: 100%;
+}
+
+.footer-social a i {
+  font-size: 2.4rem;
+  color: var(--bg-color);
+  transition: 0.5s;
+}
+
+.footer-social a:hover i {
+  color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-text p {
+    margin-bottom: 1rem;
+  }
+
+  .footer-icontop {
+    margin-top: 1rem;
+  }
+
+  .footer-social {
+    margin-top: 1rem;
+  }
+}
