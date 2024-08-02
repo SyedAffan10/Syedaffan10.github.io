@@ -201,13 +201,13 @@ header {
 }
 
 section {
-  padding-top: 80px; /* Add some extra space to account for the header height */
-  margin-top: -70px; /* Pull the section up by the same amount */
+  padding-top: 80px;
+  /* margin-top: -70px; */
 }
 
 @media (max-width: 768px) {
   section {
-    padding-top: 100px; /* Adjust for mobile if needed */
-    margin-top: -60px; /* Adjust for mobile if needed */
+    padding-top: 50px;
+    /* margin-top: -60px; */
   }
 }

@@ -3,13 +3,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1.5rem 9%; /* Adjusted padding to reduce height */
+  padding: 1.5rem 9%;
   background: var(--bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000; /* Increased z-index to ensure it stays on top */
-  height: 70px; /* Set a fixed height for the header */
+  z-index: 1000;
+  height: 70px;
   transition: 0.3s;
 }
 
@@ -46,11 +46,45 @@
 
 @media (max-width: 768px) {
   .header {
-    padding: 1rem 4%; /* Adjusted padding for mobile */
-    height: 60px; /* Adjust height for mobile */
+    padding: 1rem 4%;
+    height: 60px;
   }
 
   .header .bx-menu {
-    display: block; /* Display menu icon on smaller screens */
+    display: block;
+  }
+
+  .navbar {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    width: 100%;
+    padding: 1rem 4%;
+    background-color: var(--bg-color);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    transition: 0.25s ease;
+    transition-delay: 0.25s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .navbar.active {
+    left: 0;
+    transition-delay: 0s;
+  }
+
+  .navbar a {
+    display: block;
+    font-size: 2rem;
+    margin: 1rem 0;
+    transform: translateX(-20rem);
+    transition: 0.25s ease;
+    transition-delay: 0s;
+  }
+
+  .navbar.active a {
+    transform: translateX(0);
+    transition-delay: 0.25s;
   }
 }

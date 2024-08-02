@@ -147,9 +147,7 @@
   .home-image {
     width: 250px;
     height: 250px;
-    margin-top: 20px;
-    margin-left: 0;
-    margin-bottom: 70px; /* Add space below the image */
+    margin: 20px auto 70px; /* Center the image and add space below */
   }
 
   .home-content .block {
@@ -186,9 +184,7 @@
   .home-image {
     width: 200px;
     height: 200px;
-    margin-top: 20px;
-    margin-left: 0;
-    margin-bottom: 70px; /* Add space below the image */
+    margin: 20px auto 70px; /* Center the image and add space below */
   }
 
   .home-content .block {
