@@ -46,8 +46,22 @@
   margin-bottom: 20px;
 }
 
-.home-content .cv-btn {
-  padding-top: 20px;
+.home-content .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.home-content .social-icons a {
+  display: inline-block;
+  font-size: 24px;
+  color: var(--text-color);
+  transition: transform 0.3s, color 0.3s;
+}
+
+.home-content .social-icons a:hover {
+  transform: scale(1.1);
+  color: var(--main-color);
 }
 
 .home-content .cv-btn a {
@@ -75,9 +89,9 @@
   justify-content: center;
   width: 400px;
   height: 400px;
-  margin-left: 20px; /* Add some space between text and image */
-  flex: 0 0 auto; /* Prevent flex-grow */
-  margin-bottom: 60px; /* Add space below the image */
+  margin-left: 50px;
+  flex: 0 0 auto;
+  margin-bottom: 60px;
 }
 
 .home-image img {
@@ -104,13 +118,13 @@
   .home-content {
     align-items: center;
     text-align: center;
-    margin-bottom: 70px; /* Add some space between content and image */
+    margin-bottom: 70px;
   }
 
   .home-image {
     width: 300px;
     height: 300px;
-    margin: 0 auto 80px; /* Center the image and add space below */
+    margin: 0 auto 80px;
   }
 
   .home-content .block {
@@ -123,6 +137,10 @@
 
   .home-content h3 {
     font-size: 2rem;
+  }
+
+  .home-content .social-icons {
+    justify-content: center;
   }
 }
 
@@ -147,7 +165,7 @@
   .home-image {
     width: 250px;
     height: 250px;
-    margin: 20px auto 70px; /* Center the image and add space below */
+    margin: 20px auto 70px;
   }
 
   .home-content .block {
@@ -160,6 +178,10 @@
 
   .home-content h3 {
     font-size: 2rem;
+  }
+
+  .home-content .social-icons {
+    justify-content: center;
   }
 }
 
@@ -184,7 +206,7 @@
   .home-image {
     width: 200px;
     height: 200px;
-    margin: 20px auto 70px; /* Center the image and add space below */
+    margin: 20px auto 70px;
   }
 
   .home-content .block {
@@ -197,5 +219,51 @@
 
   .home-content h3 {
     font-size: 1.5rem;
+  }
+
+  .home-content .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home {
+    padding: 0 5%;
+    height: auto;
+    margin-top: 70px;
+  }
+
+  .home .row.full-screen {
+    flex-direction: column;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .home-content {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .home-image {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto 80px;
+  }
+
+  .home-content .block {
+    max-width: 100%;
+  }
+
+  .home-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .home-content h3 {
+    font-size: 2rem;
+  }
+
+  .home-content .social-icons {
+    justify-content: center;
   }
 }
