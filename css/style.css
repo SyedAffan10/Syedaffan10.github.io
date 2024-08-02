@@ -27,8 +27,18 @@ body {
   color: var(--text-color);
 }
 
+.heading {
+  text-align: center;
+  font-size: 60px;
+  padding-bottom: 30px;
+}
+
+.heading span {
+  color: var(--main-color);
+}
+
 .animate {
-  opacity: 1; /* Ensure animate class does not hide elements */
+  opacity: 1;
 }
 
 .animate.scroll {
@@ -54,7 +64,6 @@ body {
   }
 }
 
-/* Additional styles for responsiveness */
 @media (max-width: 1200px) {
   html {
     font-size: 55%;
@@ -191,23 +200,20 @@ body {
   }
 }
 
-/* Assuming your header height is 70px */
 header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  height: 70px; /* Set a fixed height for the header */
+  height: 70px;
 }
 
 section {
   padding-top: 80px;
-  /* margin-top: -70px; */
 }
 
 @media (max-width: 768px) {
   section {
     padding-top: 50px;
-    /* margin-top: -60px; */
   }
 }

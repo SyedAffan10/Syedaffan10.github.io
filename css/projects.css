@@ -1,19 +1,8 @@
-/* projects.css */
 #projects {
   color: aliceblue;
   line-height: 1.4;
   margin-bottom: 4rem;
   font-size: 20px;
-}
-
-.heading {
-  text-align: center;
-  font-size: 60px;
-  padding-bottom: 70px;
-}
-
-.heading span {
-  color: var(--main-color);
 }
 
 .container1 {
