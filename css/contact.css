@@ -3,12 +3,6 @@
   padding-bottom: 7rem;
 }
 
-.contact h2 {
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .contact form {
   max-width: 70rem;
   margin: 0 auto;

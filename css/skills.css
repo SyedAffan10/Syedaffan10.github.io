@@ -1,14 +1,7 @@
-/* skills.css */
 .skills {
   min-height: auto;
   padding-bottom: 7rem;
   background-color: var(--second-bg-color);
-}
-
-.skills h2 {
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .skills .skills-row {
