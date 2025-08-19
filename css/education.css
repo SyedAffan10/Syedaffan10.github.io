@@ -89,3 +89,35 @@
   font-size: 1.5rem;
   padding-bottom: 0.5rem;
 }
+
+/* Professional styling for experience descriptions */
+.education-content .content .experience-description {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.education-content .content .experience-description li {
+  position: relative;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  padding: 0.5rem 0 0.5rem 2rem;
+  margin-bottom: 0.8rem;
+  color: #e6e6e6;
+}
+
+.education-content .content .experience-description li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.education-content .content .experience-description li:hover {
+  color: #ffffff;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
