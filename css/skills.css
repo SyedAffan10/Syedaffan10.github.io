@@ -1,37 +1,52 @@
 .skills {
   min-height: auto;
-  padding-bottom: 7rem;
+  padding: 5rem 0 7rem;
   background-color: var(--second-bg-color);
 }
 
 .skills .skills-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
+  margin-top: 2rem;
 }
 
 .skills-row .skills-column {
-  flex: 1 1 40rem;
+  width: 100%;
 }
 
 .skills-column .title {
   position: relative;
   display: inline-block;
   font-size: 2.5rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 2rem;
+  color: var(--main-color);
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
 }
 
 .skills-column .skills-box {
   position: relative;
+  height: auto;
+  min-height: 350px;
 }
 
 .skills-box .skills-content {
   position: relative;
   border: 0.2rem solid var(--main-color);
-  border-radius: 0.6rem;
-  padding: 0.5rem 1.5rem;
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
   z-index: 1;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  height: 100%;
+  min-height: 320px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .skills-box .skills-content::before {
@@ -41,40 +56,130 @@
   left: 0;
   width: 0;
   height: 100%;
-  background-color: var(--bg-color);
+  background: linear-gradient(135deg, var(--main-color), transparent);
   z-index: -1;
-  transition: 0.5s;
+  transition: 0.5s ease;
+  opacity: 0.1;
 }
 
 .skills-box .skills-content:hover::before {
   width: 100%;
 }
 
+.skills-box .skills-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 180, 216, 0.3);
+}
+
 .skills-content .progress {
   padding: 1rem 0;
+  margin: 0.8rem 0;
 }
 
 .skills-content .progress h3 {
   font-size: 1.7rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: var(--text-color);
+  margin-bottom: 1rem;
 }
 
 .skills-content .progress h3 span {
-  color: var (--text-color);
+  color: var(--main-color);
+  font-weight: 700;
+  font-size: 1.6rem;
 }
 
 .skills-content .progress .bar {
-  height: 2.5rem;
-  border-radius: 0.6rem;
-  border: 0.2rem solid var(--main-color);
-  padding: 0.5rem;
-  margin: 1rem 0;
+  height: 2rem;
+  border-radius: 1rem;
+  border: 0.15rem solid var(--main-color);
+  padding: 0.2rem;
+  margin: 0.8rem 0 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .skills-content .progress .bar span {
   display: block;
   height: 100%;
   border-radius: 0.3rem;
-  background-color: var(--main-color);
+  background: linear-gradient(90deg, var(--main-color), #00d4aa);
+  transition: width 1.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-content .progress .bar span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .skills .skills-row {
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .skills .skills-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills .skills-row {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .skills-column .title {
+    font-size: 2.2rem;
+  }
+  
+  .skills-content .progress h3 {
+    font-size: 1.5rem;
+  }
+  
+  .skills-box .skills-content {
+    padding: 1.5rem 2rem;
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills .skills-row {
+    padding: 0 0.5rem;
+  }
+  
+  .skills-column .title {
+    font-size: 2rem;
+  }
+  
+  .skills-content .progress h3 {
+    font-size: 1.4rem;
+  }
+  
+  .skills-box .skills-content {
+    padding: 1.2rem 1.5rem;
+  }
 }
