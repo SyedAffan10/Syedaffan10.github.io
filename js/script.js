@@ -54,4 +54,80 @@ window.onscroll = () => {
 document.addEventListener('DOMContentLoaded', function() {
     const currentYear = new Date().getFullYear();
     document.getElementById('current-year').textContent = currentYear;
+    
+    // Initialize EmailJS
+    emailjs.init("DxhMYD34WxL87bRUh"); // You'll need to replace this with your actual public key
+    
+    // Handle contact form submission
+    setupContactForm();
 });
+
+// Contact Form Handler
+function setupContactForm() {
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const loading = submitBtn.querySelector('.loading');
+    const formStatus = document.getElementById('form-status');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Show loading state
+        submitBtn.disabled = true;
+        btnText.style.display = 'none';
+        loading.style.display = 'inline';
+        
+        // Hide previous status messages
+        formStatus.style.display = 'none';
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+
+        // Get form data
+        const formData = new FormData(form);
+        const templateParams = {
+            from_name: formData.get('from_name'),
+            from_email: formData.get('from_email'),
+            phone: formData.get('phone'),
+            subject: formData.get('subject'),
+            message: formData.get('message'),
+            to_email: 'syedaffan.dev@gmail.com'
+        };
+
+        // Send email using EmailJS
+        emailjs.send('service_cnfqy6m', 'template_gitdmy4', templateParams)
+            .then(function(response) {
+                console.log('Email sent successfully:', response);
+                showSuccessMessage();
+                form.reset();
+            })
+            .catch(function(error) {
+                console.error('Error sending email:', error);
+                showErrorMessage();
+            })
+            .finally(function() {
+                // Reset button state
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                loading.style.display = 'none';
+            });
+    });
+
+    function showSuccessMessage() {
+        formStatus.style.display = 'block';
+        successMessage.style.display = 'flex';
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 5000);
+    }
+
+    function showErrorMessage() {
+        formStatus.style.display = 'block';
+        errorMessage.style.display = 'flex';
+        setTimeout(() => {
+            formStatus.style.display = 'none';
+        }, 5000);
+    }
+}
