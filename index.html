@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/style.css" />
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -694,31 +695,31 @@
           Contact<span> Me!</span
           ><span class="animate scroll" style="--i: 1"></span>
         </h2>
-        <form action="#">
+        <form id="contact-form">
           <div class="input-box">
             <div class="input-field">
-              <input type="text" placeholder="Full Name" required />
+              <input type="text" name="from_name" placeholder="Full Name" required />
               <span class="focus"></span>
             </div>
             <div class="input-field">
-              <input type="text" placeholder="Email Address" required />
+              <input type="email" name="from_email" placeholder="Email Address" required />
               <span class="focus"></span>
             </div>
           </div>
           <div class="input-box">
             <div class="input-field">
-              <input type="number" placeholder="Mobile Number" required />
+              <input type="tel" name="phone" placeholder="Mobile Number" required />
               <span class="focus"></span>
             </div>
             <div class="input-field">
-              <input type="text" placeholder="Subject" required />
+              <input type="text" name="subject" placeholder="Subject" required />
               <span class="focus"></span>
             </div>
           </div>
           <div class="textarea-field">
             <textarea
-              name=""
-              id=""
+              name="message"
+              id="message"
               cols="30"
               rows="10"
               placeholder="Your Message"
@@ -728,7 +729,22 @@
           </div>
 
           <div class="btn-box btns">
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn" id="submit-btn">
+              <span class="btn-text">Send Message</span>
+              <span class="loading" style="display: none;">Sending...</span>
+            </button>
+          </div>
+          
+          <!-- Status Messages -->
+          <div class="form-status" id="form-status" style="display: none;">
+            <div class="success-message" id="success-message" style="display: none;">
+              <i class="bx bx-check-circle"></i>
+              <p>Thank you! Your message has been sent successfully.</p>
+            </div>
+            <div class="error-message" id="error-message" style="display: none;">
+              <i class="bx bx-error-circle"></i>
+              <p>Sorry, there was an error sending your message. Please try again.</p>
+            </div>
           </div>
         </form>
       </div>
