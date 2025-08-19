@@ -121,3 +121,95 @@
   transform: translateX(5px);
   transition: all 0.3s ease;
 }
+
+/* Professional job header styling */
+.education-content .content .job-header {
+  margin: 1.5rem 0 2rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 183, 255, 0.3);
+}
+
+.education-content .content .job-header .designation {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 0 0 0.8rem 0;
+  line-height: 1.3;
+}
+
+.education-content .content .job-header .company {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+}
+
+.education-content .content .job-header .company a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.education-content .content .job-header .company a:hover {
+  color: var(--main-color);
+}
+
+.education-content .content .job-header .location {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #b3b3b3;
+  font-style: italic;
+}
+
+.education-content .content .job-header .location i {
+  margin-right: 0.5rem;
+  color: var(--main-color);
+  font-size: 1.6rem;
+}
+
+/* Professional education header styling */
+.education-content .content .education-header {
+  margin: 1.5rem 0 2rem 0;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 183, 255, 0.3);
+}
+
+.education-content .content .education-header .degree {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  margin: 0 0 0.8rem 0;
+  line-height: 1.3;
+}
+
+.education-content .content .education-header .university {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  color: #ffffff;
+}
+
+.education-content .content .education-header .university a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.education-content .content .education-header .university a:hover {
+  color: var(--main-color);
+}
+
+.education-content .content .education-header .location {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #b3b3b3;
+  font-style: italic;
+}
+
+.education-content .content .education-header .location i {
+  margin-right: 0.5rem;
+  color: var(--main-color);
+  font-size: 1.6rem;
+}
