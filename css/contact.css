@@ -103,3 +103,60 @@
 .contact form .btn-box.btns .btn:hover {
   color: var(--main-color);
 }
+
+/* Form Status Messages */
+.form-status {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.success-message,
+.error-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 0.6rem;
+  font-size: 1.6rem;
+  margin: 1rem 0;
+}
+
+.success-message {
+  background-color: rgba(34, 197, 94, 0.1);
+  border: 0.2rem solid #22c55e;
+  color: #22c55e;
+}
+
+.error-message {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 0.2rem solid #ef4444;
+  color: #ef4444;
+}
+
+.success-message i,
+.error-message i {
+  font-size: 2rem;
+}
+
+/* Loading state for button */
+.btn .loading {
+  opacity: 0.7;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+@media (max-width: 768px) {
+  .contact form .input-box .input-field {
+    width: 100%;
+  }
+  
+  .success-message,
+  .error-message {
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+}
