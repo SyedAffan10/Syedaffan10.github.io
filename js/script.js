@@ -93,8 +93,12 @@ function setupContactForm() {
             phone: formData.get('phone'),
             subject: formData.get('subject'),
             message: formData.get('message'),
+            to_name: 'Syed Affan Hussain',
             to_email: 'syedaffan.dev@gmail.com'
         };
+        
+        // Debug log to check template params
+        console.log('Sending email with params:', templateParams);
 
         // Send email using EmailJS
         emailjs.send('service_cnfqy6m', 'template_gitdmy4', templateParams)
