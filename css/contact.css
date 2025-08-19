@@ -71,17 +71,35 @@
 }
 
 .contact form .btn-box.btns .btn {
+  position: relative;
   cursor: pointer;
   padding: 1rem 2rem;
   font-size: 1.6rem;
-  color: var(--btn-text-color);
+  color: var(--bg-color);
   background-color: var(--main-color);
-  border: none;
+  border: 0.2rem solid var(--main-color);
   border-radius: 0.6rem;
-  transition: background-color 0.3s, color 0.3s;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.contact form .btn-box.btns .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--second-bg-color);
+  z-index: -1;
+  transition: 0.5s;
+}
+
+.contact form .btn-box.btns .btn:hover::before {
+  width: 100%;
 }
 
 .contact form .btn-box.btns .btn:hover {
-  background-color: var(--btn-hover-bg-color);
-  color: var(--btn-hover-text-color);
+  color: var(--main-color);
 }
