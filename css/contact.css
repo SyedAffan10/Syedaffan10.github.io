@@ -207,6 +207,14 @@
   text-align: center;
 }
 
+/* Button container styling */
+.contact form .btn-box.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
 .success-message,
 .error-message {
   display: flex;
