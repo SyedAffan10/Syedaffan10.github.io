@@ -7,6 +7,8 @@
   max-width: 70rem;
   margin: 0 auto;
   text-align: center;
+  padding: 0 2rem;
+  box-sizing: border-box;
 }
 
 .contact form .input-box {
@@ -14,6 +16,7 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .contact form .input-box .input-field {
@@ -21,11 +24,16 @@
   width: 49%;
   margin: 0.8rem 0;
   height: 6rem; /* Fixed height for consistency */
+  min-height: 4rem; /* Minimum height for very small screens */
 }
 
 /* Override width for phone field to ensure it stays at 49% */
 .contact form .input-box .input-field.phone-field {
   width: 49% !important;
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: stretch;
 }
 
 .contact form .input-box .input-field input,
@@ -40,6 +48,8 @@
   border-radius: 0.6rem;
   border: 0.2rem solid var(--main-color);
   outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 .contact form .input-box .input-field input::placeholder,
@@ -151,6 +161,32 @@
   z-index: 1;
   overflow: hidden;
   transition: 0.5s;
+  min-height: 4.4rem;
+  min-width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+/* Touch-friendly hover states for mobile */
+@media (hover: hover) {
+  .contact form .btn-box.btns .btn:hover::before {
+    width: 100%;
+  }
+
+  .contact form .btn-box.btns .btn:hover {
+    color: var(--main-color);
+  }
+}
+
+/* Touch states for mobile devices */
+@media (hover: none) {
+  .contact form .btn-box.btns .btn:active {
+    transform: scale(0.98);
+    background-color: var(--second-bg-color);
+    color: var(--main-color);
+  }
 }
 
 .contact form .btn-box.btns .btn::before {
@@ -163,14 +199,6 @@
   background-color: var(--second-bg-color);
   z-index: -1;
   transition: 0.5s;
-}
-
-.contact form .btn-box.btns .btn:hover::before {
-  width: 100%;
-}
-
-.contact form .btn-box.btns .btn:hover {
-  color: var(--main-color);
 }
 
 /* Form Status Messages */
@@ -218,9 +246,62 @@
   cursor: not-allowed;
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 991px) {
+  .contact form {
+    max-width: 60rem;
+    padding: 0 2rem;
+  }
+  
   .contact form .input-box .input-field {
     width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .contact form .input-box .input-field.phone-field {
+    width: 100% !important;
+  }
+  
+  .contact form .input-box .phone-field {
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  
+  .contact form .input-box .phone-field select {
+    width: 35%;
+    min-width: 110px;
+    border: 0.2rem solid var(--main-color);
+    border-right: none;
+    border-radius: 0.6rem 0 0 0.6rem;
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+  
+  .contact form .input-box .phone-field input[type="tel"] {
+    width: 65%;
+    border: 0.2rem solid var(--main-color);
+    border-left: none;
+    border-radius: 0 0.6rem 0.6rem 0;
+    font-size: 1.4rem;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding-bottom: 5rem;
+  }
+  
+  .contact form {
+    max-width: 50rem;
+    padding: 0 1.5rem;
+  }
+  
+  .contact form .input-box .input-field {
+    width: 100%;
+    margin: 0.8rem 0;
+    height: 5.5rem;
   }
   
   .contact form .input-box .input-field.phone-field {
@@ -237,17 +318,130 @@
     width: 100%;
     border: 0.2rem solid var(--main-color);
     border-radius: 0.6rem;
+    font-size: 1.4rem;
+    padding: 1.2rem;
   }
   
   .contact form .input-box .phone-field input[type="tel"] {
     width: 100%;
     border: 0.2rem solid var(--main-color);
     border-radius: 0.6rem;
+    font-size: 1.4rem;
+    padding: 1.2rem;
+  }
+  
+  .contact form .input-box .input-field input,
+  .contact form .textarea-field textarea,
+  .contact form .input-box .input-field select {
+    font-size: 1.4rem;
+    padding: 1.2rem;
+  }
+  
+  .contact form .textarea-field {
+    margin: 0.8rem 0 2rem;
   }
   
   .success-message,
   .error-message {
     font-size: 1.4rem;
     padding: 1rem;
+    margin: 0.8rem 0;
+  }
+  
+  .contact form .btn-box.btns .btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.4rem;
+    width: 100%;
+    max-width: 20rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact form {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+  
+  .contact form .input-box .input-field {
+    height: 5rem;
+    margin: 0.6rem 0;
+  }
+  
+  .contact form .input-box .input-field input,
+  .contact form .textarea-field textarea,
+  .contact form .input-box .input-field select {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+  
+  .contact form .input-box .phone-field select,
+  .contact form .input-box .phone-field input[type="tel"] {
+    font-size: 1.3rem;
+    padding: 1rem;
+  }
+  
+  .contact form .btn-box.btns .btn {
+    padding: 1rem 2rem;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 462px) {
+  .contact form {
+    padding: 0 0.5rem;
+  }
+  
+  .contact form .input-box .input-field {
+    height: 4.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  .contact form .input-box .input-field input,
+  .contact form .textarea-field textarea,
+  .contact form .input-box .input-field select {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+  
+  .contact form .input-box .phone-field select,
+  .contact form .input-box .phone-field input[type="tel"] {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+  }
+  
+  .contact form .textarea-field {
+    margin: 0.5rem 0 1.5rem;
+  }
+  
+  .contact form .btn-box.btns .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1.2rem;
+    width: 100%;
+  }
+  
+  .success-message,
+  .error-message {
+    font-size: 1.2rem;
+    padding: 0.8rem;
+    gap: 0.5rem;
+  }
+}
+
+@media (max-width: 371px) {
+  .contact form .input-box .input-field {
+    height: 4rem;
+  }
+  
+  .contact form .input-box .input-field input,
+  .contact form .textarea-field textarea,
+  .contact form .input-box .input-field select {
+    font-size: 1.1rem;
+    padding: 0.7rem;
+  }
+  
+  .contact form .input-box .phone-field select,
+  .contact form .input-box .phone-field input[type="tel"] {
+    font-size: 1.1rem;
+    padding: 0.7rem;
   }
 }
