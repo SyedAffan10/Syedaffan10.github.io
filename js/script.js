@@ -56,7 +56,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('current-year').textContent = currentYear;
     
     // Initialize EmailJS
-    emailjs.init("DxhMYD34WxL87bRUh"); // You'll need to replace this with your actual public key
+    emailjs.init({
+        publicKey: "DxhMYD34WxL87bRUh",
+    });
     
     // Handle contact form submission
     setupContactForm();
