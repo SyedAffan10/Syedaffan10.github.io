@@ -545,14 +545,14 @@ function setupContactForm() {
 
 // Badge to Credly URL Mapping
 const badgeCredlyLinks = {
-  "machine-learning-with-python.png": "https://www.credly.com/earner/earned/share/60605069-c503-47e0-8635-3aa5826c1088",
-  "chatbot-building-essentials.png": "https://www.credly.com/earner/earned/share/1b4a1f3e-bf65-4d4d-91f3-99e668239cd1",
-  "computer-vision-and-image-processing-essentials.png": "https://www.credly.com/earner/earned/share/9661e044-e443-49ac-87a6-a3ce33114386",
-  "deep-learning-essentials-with-keras.png": "https://www.credly.com/earner/earned/share/ee99b5d8-c642-4f96-a367-4d5aa4a93045",
-  "deep-learning-with-tensorflow.png": "https://www.credly.com/earner/earned/share/a4923e63-6d73-4dc1-a840-7d2d12a6d60c",
-  "microsoft-certified-azure-ai-fundamentals.png": "https://www.credly.com/earner/earned/share/05957212-ec85-4e7c-8389-3eb24d94eef6",
-  "microsoft-certified-dynamics-365-fundamentals.png": "https://www.credly.com/earner/earned/share/e979d972-6909-4ca5-8d37-13caaa7a7245",
-  "microsoft-certified-power-platform-fundamentals.png": "https://www.credly.com/earner/earned/share/1437c682-085a-4ef0-bf37-aa59e31d18d0"
+  "machine-learning-with-python.png": "https://www.credly.com/earner/earned/badge/60605069-c503-47e0-8635-3aa5826c1088",
+  "chatbot-building-essentials.png": "https://www.credly.com/earner/earned/badge/1b4a1f3e-bf65-4d4d-91f3-99e668239cd1",
+  "computer-vision-and-image-processing-essentials.png": "https://www.credly.com/earner/earned/badge/9661e044-e443-49ac-87a6-a3ce33114386",
+  "deep-learning-essentials-with-keras.png": "https://www.credly.com/earner/earned/badge/ee99b5d8-c642-4f96-a367-4d5aa4a93045",
+  "deep-learning-with-tensorflow.png": "https://www.credly.com/earner/earned/badge/a4923e63-6d73-4dc1-a840-7d2d12a6d60c",
+  "microsoft-certified-azure-ai-fundamentals.png": "https://www.credly.com/earner/earned/badge/05957212-ec85-4e7c-8389-3eb24d94eef6",
+  "microsoft-certified-dynamics-365-fundamentals.png": "https://www.credly.com/earner/earned/badge/e979d972-6909-4ca5-8d37-13caaa7a7245",
+  "microsoft-certified-power-platform-fundamentals.png": "https://www.credly.com/earner/earned/badge/1437c682-085a-4ef0-bf37-aa59e31d18d0"
 };
 
 // Load Badges from images/badges folder
