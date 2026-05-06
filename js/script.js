@@ -28,6 +28,38 @@ document.addEventListener('mousemove', (e) => {
     cursorGlow.style.top = mouseY + 'px';
 });
 
+// Cursor Burst on Click
+document.addEventListener('click', (e) => {
+    createBurst(e.clientX, e.clientY);
+});
+
+function createBurst(x, y) {
+    const burstContainer = document.querySelector('.cursor-burst-container');
+    const particleCount = 12;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'burst-particle';
+        
+        const angle = (i / particleCount) * Math.PI * 2;
+        const velocity = 5 + Math.random() * 5;
+        const vx = Math.cos(angle) * velocity;
+        const vy = Math.sin(angle) * velocity;
+        
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+        particle.style.setProperty('--vx', vx);
+        particle.style.setProperty('--vy', vy);
+        
+        burstContainer.appendChild(particle);
+        
+        // Remove particle after animation
+        setTimeout(() => {
+            particle.remove();
+        }, 600);
+    }
+}
+
 // Typing Animation for Home Section
 document.addEventListener('DOMContentLoaded', function() {
     const typedTextSpan = document.querySelector('.typed-text');
