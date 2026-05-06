@@ -1,3 +1,25 @@
+// Custom Cursor
+const cursor = document.getElementById('cursor');
+
+document.addEventListener('mousemove', (e) => {
+    if (cursor) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    }
+});
+
+// Hover effects on interactive elements
+const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, [role="button"]');
+
+interactiveElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        if (cursor) cursor.classList.add('active');
+    });
+    el.addEventListener('mouseleave', () => {
+        if (cursor) cursor.classList.remove('active');
+    });
+});
+
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 let navLinks = document.querySelectorAll('header nav a');
@@ -14,91 +36,6 @@ navLinks.forEach(link => {
         navbar.classList.remove('active');
     }
 });
-
-// Cursor Glow Effect - Only on Desktop
-const isTouchDevice = () => {
-    return (('ontouchstart' in window) ||
-            (navigator.maxTouchPoints > 0) ||
-            (navigator.msMaxTouchPoints > 0));
-};
-
-if (!isTouchDevice()) {
-    const cursorGlow = document.querySelector('.cursor-glow');
-    const waveContainer = document.querySelector('.cursor-wave-container');
-    let mouseX = 0;
-    let mouseY = 0;
-    let lastWaveTime = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        
-        cursorGlow.style.left = mouseX + 'px';
-        cursorGlow.style.top = mouseY + 'px';
-        
-        // Create wave every 80ms
-        const currentTime = Date.now();
-        if (currentTime - lastWaveTime > 80) {
-            createWave(mouseX, mouseY);
-            lastWaveTime = currentTime;
-        }
-    });
-
-    function createWave(x, y) {
-        const wave = document.createElement('div');
-        wave.className = 'cursor-wave';
-        wave.style.left = x + 'px';
-        wave.style.top = y + 'px';
-        
-        waveContainer.appendChild(wave);
-        
-        // Remove wave after animation completes
-        setTimeout(() => {
-            wave.remove();
-        }, 600);
-    }
-
-    // Cursor Burst on Click
-    document.addEventListener('click', (e) => {
-        createBurst(e.clientX, e.clientY);
-    });
-
-    function createBurst(x, y) {
-        const burstContainer = document.querySelector('.cursor-burst-container');
-        const particleCount = 12;
-        
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'burst-particle';
-            
-            const angle = (i / particleCount) * Math.PI * 2;
-            const velocity = 5 + Math.random() * 5;
-            const vx = Math.cos(angle) * velocity;
-            const vy = Math.sin(angle) * velocity;
-            
-            particle.style.left = x + 'px';
-            particle.style.top = y + 'px';
-            particle.style.setProperty('--vx', vx);
-            particle.style.setProperty('--vy', vy);
-            
-            burstContainer.appendChild(particle);
-            
-            // Remove particle after animation
-            setTimeout(() => {
-                particle.remove();
-            }, 600);
-        }
-    }
-} else {
-    // Hide custom cursor on touch devices
-    const cursorGlow = document.querySelector('.cursor-glow');
-    const waveContainer = document.querySelector('.cursor-wave-container');
-    const burstContainer = document.querySelector('.cursor-burst-container');
-    
-    if (cursorGlow) cursorGlow.style.display = 'none';
-    if (waveContainer) waveContainer.style.display = 'none';
-    if (burstContainer) burstContainer.style.display = 'none';
-}
 
 // Typing Animation for Home Section
 document.addEventListener('DOMContentLoaded', function() {
