@@ -17,8 +17,10 @@ navLinks.forEach(link => {
 
 // Cursor Glow Effect
 const cursorGlow = document.querySelector('.cursor-glow');
+const waveContainer = document.querySelector('.cursor-wave-container');
 let mouseX = 0;
 let mouseY = 0;
+let lastWaveTime = 0;
 
 document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -26,7 +28,28 @@ document.addEventListener('mousemove', (e) => {
     
     cursorGlow.style.left = mouseX + 'px';
     cursorGlow.style.top = mouseY + 'px';
+    
+    // Create wave every 80ms
+    const currentTime = Date.now();
+    if (currentTime - lastWaveTime > 80) {
+        createWave(mouseX, mouseY);
+        lastWaveTime = currentTime;
+    }
 });
+
+function createWave(x, y) {
+    const wave = document.createElement('div');
+    wave.className = 'cursor-wave';
+    wave.style.left = x + 'px';
+    wave.style.top = y + 'px';
+    
+    waveContainer.appendChild(wave);
+    
+    // Remove wave after animation completes
+    setTimeout(() => {
+        wave.remove();
+    }, 600);
+}
 
 // Cursor Burst on Click
 document.addEventListener('click', (e) => {
