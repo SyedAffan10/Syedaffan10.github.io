@@ -1,12 +1,89 @@
-// Custom Cursor
+// Custom Cursor with Waves and Burst - Detects actual touch input
 const cursor = document.getElementById('cursor');
+const waveContainer = document.getElementById('cursor-wave-container');
+const burstContainer = document.getElementById('cursor-burst-container');
 
+let cursorEnabled = true;
+let lastWaveTime = 0;
+
+// Disable cursor on actual touch input
+document.addEventListener('touchstart', () => {
+    cursorEnabled = false;
+    if (cursor) cursor.style.display = 'none';
+    if (waveContainer) waveContainer.style.display = 'none';
+    if (burstContainer) burstContainer.style.display = 'none';
+});
+
+// Re-enable cursor on mouse movement
 document.addEventListener('mousemove', (e) => {
-    if (cursor) {
+    if (!cursorEnabled) {
+        cursorEnabled = true;
+        if (cursor) cursor.style.display = 'block';
+        if (waveContainer) waveContainer.style.display = 'block';
+        if (burstContainer) burstContainer.style.display = 'block';
+    }
+
+    if (cursorEnabled && cursor) {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
+
+        // Create waves every 80ms
+        const currentTime = Date.now();
+        if (currentTime - lastWaveTime > 80) {
+            createWave(e.clientX, e.clientY);
+            lastWaveTime = currentTime;
+        }
     }
 });
+
+    function createWave(x, y) {
+        if (!waveContainer) return;
+        
+        const wave = document.createElement('div');
+        wave.className = 'cursor-wave';
+        wave.style.left = x + 'px';
+        wave.style.top = y + 'px';
+        
+        waveContainer.appendChild(wave);
+        
+        // Remove wave after animation
+        setTimeout(() => {
+            wave.remove();
+        }, 600);
+    }
+
+    // Burst on click
+    document.addEventListener('click', (e) => {
+        createBurst(e.clientX, e.clientY);
+    });
+
+    function createBurst(x, y) {
+        if (!burstContainer) return;
+        
+        const particleCount = 12;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'cursor-particle';
+            
+            const angle = (i / particleCount) * Math.PI * 2;
+            const velocity = 5 + Math.random() * 5;
+            const vx = Math.cos(angle) * velocity;
+            const vy = Math.sin(angle) * velocity;
+            
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.setProperty('--vx', vx);
+            particle.style.setProperty('--vy', vy);
+            
+            burstContainer.appendChild(particle);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                particle.remove();
+            }, 600);
+        }
+    }
 
 // Hover effects on interactive elements
 const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, [role="button"]');
