@@ -15,72 +15,89 @@ navLinks.forEach(link => {
     }
 });
 
-// Cursor Glow Effect
-const cursorGlow = document.querySelector('.cursor-glow');
-const waveContainer = document.querySelector('.cursor-wave-container');
-let mouseX = 0;
-let mouseY = 0;
-let lastWaveTime = 0;
+// Cursor Glow Effect - Only on Desktop
+const isTouchDevice = () => {
+    return (('ontouchstart' in window) ||
+            (navigator.maxTouchPoints > 0) ||
+            (navigator.msMaxTouchPoints > 0));
+};
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    
-    cursorGlow.style.left = mouseX + 'px';
-    cursorGlow.style.top = mouseY + 'px';
-    
-    // Create wave every 80ms
-    const currentTime = Date.now();
-    if (currentTime - lastWaveTime > 80) {
-        createWave(mouseX, mouseY);
-        lastWaveTime = currentTime;
-    }
-});
+if (!isTouchDevice()) {
+    const cursorGlow = document.querySelector('.cursor-glow');
+    const waveContainer = document.querySelector('.cursor-wave-container');
+    let mouseX = 0;
+    let mouseY = 0;
+    let lastWaveTime = 0;
 
-function createWave(x, y) {
-    const wave = document.createElement('div');
-    wave.className = 'cursor-wave';
-    wave.style.left = x + 'px';
-    wave.style.top = y + 'px';
-    
-    waveContainer.appendChild(wave);
-    
-    // Remove wave after animation completes
-    setTimeout(() => {
-        wave.remove();
-    }, 600);
-}
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        cursorGlow.style.left = mouseX + 'px';
+        cursorGlow.style.top = mouseY + 'px';
+        
+        // Create wave every 80ms
+        const currentTime = Date.now();
+        if (currentTime - lastWaveTime > 80) {
+            createWave(mouseX, mouseY);
+            lastWaveTime = currentTime;
+        }
+    });
 
-// Cursor Burst on Click
-document.addEventListener('click', (e) => {
-    createBurst(e.clientX, e.clientY);
-});
-
-function createBurst(x, y) {
-    const burstContainer = document.querySelector('.cursor-burst-container');
-    const particleCount = 12;
-    
-    for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'burst-particle';
+    function createWave(x, y) {
+        const wave = document.createElement('div');
+        wave.className = 'cursor-wave';
+        wave.style.left = x + 'px';
+        wave.style.top = y + 'px';
         
-        const angle = (i / particleCount) * Math.PI * 2;
-        const velocity = 5 + Math.random() * 5;
-        const vx = Math.cos(angle) * velocity;
-        const vy = Math.sin(angle) * velocity;
+        waveContainer.appendChild(wave);
         
-        particle.style.left = x + 'px';
-        particle.style.top = y + 'px';
-        particle.style.setProperty('--vx', vx);
-        particle.style.setProperty('--vy', vy);
-        
-        burstContainer.appendChild(particle);
-        
-        // Remove particle after animation
+        // Remove wave after animation completes
         setTimeout(() => {
-            particle.remove();
+            wave.remove();
         }, 600);
     }
+
+    // Cursor Burst on Click
+    document.addEventListener('click', (e) => {
+        createBurst(e.clientX, e.clientY);
+    });
+
+    function createBurst(x, y) {
+        const burstContainer = document.querySelector('.cursor-burst-container');
+        const particleCount = 12;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'burst-particle';
+            
+            const angle = (i / particleCount) * Math.PI * 2;
+            const velocity = 5 + Math.random() * 5;
+            const vx = Math.cos(angle) * velocity;
+            const vy = Math.sin(angle) * velocity;
+            
+            particle.style.left = x + 'px';
+            particle.style.top = y + 'px';
+            particle.style.setProperty('--vx', vx);
+            particle.style.setProperty('--vy', vy);
+            
+            burstContainer.appendChild(particle);
+            
+            // Remove particle after animation
+            setTimeout(() => {
+                particle.remove();
+            }, 600);
+        }
+    }
+} else {
+    // Hide custom cursor on touch devices
+    const cursorGlow = document.querySelector('.cursor-glow');
+    const waveContainer = document.querySelector('.cursor-wave-container');
+    const burstContainer = document.querySelector('.cursor-burst-container');
+    
+    if (cursorGlow) cursorGlow.style.display = 'none';
+    if (waveContainer) waveContainer.style.display = 'none';
+    if (burstContainer) burstContainer.style.display = 'none';
 }
 
 // Typing Animation for Home Section
