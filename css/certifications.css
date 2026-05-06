@@ -8,16 +8,6 @@
   scroll-margin-top: 50px;
 }
 
-.certifications .heading {
-  text-align: center;
-  font-size: 60px;
-  margin-bottom: 5rem;
-}
-
-.certifications .heading span {
-  color: var(--main-color);
-}
-
 .certifications-container {
   width: 100%;
   max-width: 1400px;
@@ -116,11 +106,6 @@
     gap: 2rem;
   }
 
-  .certifications .heading {
-    font-size: 50px;
-    margin-bottom: 3rem;
-  }
-
   .badge-card {
     width: 160px;
     height: 190px;
@@ -139,11 +124,6 @@
   .badges-grid {
     gap: 1.5rem;
     padding: 1rem;
-  }
-
-  .certifications .heading {
-    font-size: 40px;
-    margin-bottom: 2rem;
   }
 
   .badge-card {
@@ -170,9 +150,10 @@
     padding: 1rem;
   }
 
-  .certifications .heading {
-    font-size: 36px;
-    margin-bottom: 2rem;
+
+  .badge-card {
+    width: 155px;
+    height: 185px;
   }
 
   .badge-card {
@@ -196,22 +177,7 @@
 
   .badges-grid {
     gap: 1.2rem;
-    padding: 0.8rem;
-  }
-
-  .certifications .heading {
-    font-size: 32px;
-    margin-bottom: 1.8rem;
-  }
-
-  .badge-card {
-    width: 155px;
-    height: 185px;
-  }
-
-  .badge-image-wrapper {
-    height: 125px;
-  }
+    padding: 0
 
   .badge-info {
     padding: 0.9rem;
