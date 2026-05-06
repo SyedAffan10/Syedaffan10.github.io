@@ -15,6 +15,19 @@ navLinks.forEach(link => {
     }
 });
 
+// Cursor Glow Effect
+const cursorGlow = document.querySelector('.cursor-glow');
+let mouseX = 0;
+let mouseY = 0;
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    cursorGlow.style.left = mouseX + 'px';
+    cursorGlow.style.top = mouseY + 'px';
+});
+
 // Typing Animation for Home Section
 document.addEventListener('DOMContentLoaded', function() {
     const typedTextSpan = document.querySelector('.typed-text');
