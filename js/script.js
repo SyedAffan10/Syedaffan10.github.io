@@ -208,6 +208,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Handle contact form submission
     setupContactForm();
+    
+    // Load certifications badges
+    loadBadges();
 });
 
 // Phone Number Validation
@@ -538,4 +541,80 @@ function setupContactForm() {
             formStatus.style.display = 'none';
         }, 5000);
     }
+}
+
+// Badge to Credly URL Mapping
+const badgeCredlyLinks = {
+  "machine-learning-with-python.png": "https://www.credly.com/earner/earned/share/60605069-c503-47e0-8635-3aa5826c1088",
+  "chatbot-building-essentials.png": "https://www.credly.com/earner/earned/share/1b4a1f3e-bf65-4d4d-91f3-99e668239cd1",
+  "computer-vision-and-image-processing-essentials.png": "https://www.credly.com/earner/earned/share/9661e044-e443-49ac-87a6-a3ce33114386",
+  "deep-learning-essentials-with-keras.png": "https://www.credly.com/earner/earned/share/ee99b5d8-c642-4f96-a367-4d5aa4a93045",
+  "deep-learning-with-tensorflow.png": "https://www.credly.com/earner/earned/share/a4923e63-6d73-4dc1-a840-7d2d12a6d60c",
+  "microsoft-certified-azure-ai-fundamentals.png": "https://www.credly.com/earner/earned/share/05957212-ec85-4e7c-8389-3eb24d94eef6",
+  "microsoft-certified-dynamics-365-fundamentals.png": "https://www.credly.com/earner/earned/share/e979d972-6909-4ca5-8d37-13caaa7a7245",
+  "microsoft-certified-power-platform-fundamentals.png": "https://www.credly.com/earner/earned/share/1437c682-085a-4ef0-bf37-aa59e31d18d0"
+};
+
+// Load Badges from images/badges folder
+async function loadBadges() {
+    const badgesContainer = document.getElementById('badges-container');
+    
+    if (!badgesContainer) {
+        console.log('Badges container not found');
+        return;
+    }
+    
+    try {
+        // Get all badge images from folder
+        const badgeFiles = Object.keys(badgeCredlyLinks);
+        
+        if (badgeFiles.length === 0) {
+            badgesContainer.innerHTML = '<p style="text-align: center; color: var(--text-color); padding: 2rem;">No certifications available yet.</p>';
+            return;
+        }
+        
+        // Clear container
+        badgesContainer.innerHTML = '';
+        
+        // Create badge cards for each image file
+        badgeFiles.forEach((fileName) => {
+            const badgeCard = createBadgeCard(fileName, badgeCredlyLinks[fileName]);
+            badgesContainer.appendChild(badgeCard);
+        });
+        
+        console.log(`Successfully loaded ${badgeFiles.length} badges`);
+        
+    } catch (error) {
+        console.error('Error loading badges:', error);
+        badgesContainer.innerHTML = `<p style="text-align: center; color: #ff6b6b; padding: 2rem;">Unable to load certifications.</p>`;
+    }
+}
+
+function createBadgeCard(fileName, credlyUrl) {
+    const card = document.createElement('div');
+    card.className = 'badge-card';
+    
+    // Extract name from filename (remove .png and replace hyphens with spaces, capitalize)
+    const badgeName = fileName
+        .replace(/\.[^/.]+$/, '') // Remove file extension
+        .replace(/-/g, ' ') // Replace hyphens with spaces
+        .replace(/\b\w/g, char => char.toUpperCase()); // Capitalize first letter of each word
+    
+    card.title = `Click to view credential: ${badgeName}`;
+    
+    card.innerHTML = `
+        <div class="badge-image-wrapper">
+            <img src="images/badges/${fileName}" alt="${badgeName}" onerror="this.src='https://via.placeholder.com/150x120?text=Badge'">
+        </div>
+        <div class="badge-info">
+            <div class="badge-name">${badgeName}</div>
+        </div>
+    `;
+    
+    // Add click handler to redirect to Credly
+    card.addEventListener('click', () => {
+        window.open(credlyUrl, '_blank');
+    });
+    
+    return card;
 }
