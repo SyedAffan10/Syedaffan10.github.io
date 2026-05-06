@@ -6,6 +6,7 @@
   gap: 2rem;
   background-color: var(--second-bg-color);
   padding-bottom: 6rem;
+  scroll-margin-top: 50px;
 }
 
 .about-img {

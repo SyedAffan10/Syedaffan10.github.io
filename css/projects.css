@@ -5,6 +5,7 @@
   margin-bottom: 4rem;
   padding: 5rem 0;
   background: var(--bg-color);
+  scroll-margin-top: 50px;
 }
 
 .projects-grid {

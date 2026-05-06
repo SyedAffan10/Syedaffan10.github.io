@@ -8,6 +8,7 @@
   margin-top: 70px;
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 50px;
 }
 
 .home::before {

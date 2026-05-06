@@ -1,6 +1,7 @@
 .contact {
   min-height: auto;
   padding-bottom: 7rem;
+  scroll-margin-top: 50px;
 }
 
 .contact form {

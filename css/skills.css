@@ -2,6 +2,7 @@
   min-height: auto;
   padding: 5rem 0 7rem;
   background-color: var(--second-bg-color);
+  scroll-margin-top: 50px;
 }
 
 .skills .skills-row {
