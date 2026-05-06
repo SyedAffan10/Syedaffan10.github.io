@@ -74,7 +74,7 @@
 .education-content .content .year {
   font-size: 1.5rem;
   color: var(--main-color);
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.2rem;
 }
 
 .education-content .content .year i {
@@ -124,7 +124,7 @@
 
 /* Professional job header styling */
 .education-content .content .job-header {
-  margin: 1.5rem 0 2rem 0;
+  margin: 0.5rem 0 2rem 0;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(0, 183, 255, 0.3);
 }
@@ -170,7 +170,7 @@
 
 /* Professional education header styling */
 .education-content .content .education-header {
-  margin: 1.5rem 0 2rem 0;
+  margin: 0.5rem 0 2rem 0;
   padding: 1rem 0;
   border-bottom: 1px solid rgba(0, 183, 255, 0.3);
 }
