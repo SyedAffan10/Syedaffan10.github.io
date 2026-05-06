@@ -166,6 +166,35 @@
   }
 
   .badges-grid {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .certifications .heading {
+    font-size: 36px;
+    margin-bottom: 2rem;
+  }
+
+  .badge-card {
+    width: 155px;
+    height: 185px;
+  }
+
+  .badge-image-wrapper {
+    height: 125px;
+  }
+
+  .badge-name {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .certifications {
+    padding: 2rem 0;
+  }
+
+  .badges-grid {
     gap: 1.2rem;
     padding: 0.8rem;
   }
@@ -176,48 +205,19 @@
   }
 
   .badge-card {
-    width: 140px;
-    height: 170px;
+    width: 155px;
+    height: 185px;
   }
 
   .badge-image-wrapper {
-    height: 110px;
-  }
-
-  .badge-name {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .certifications {
-    padding: 2rem 0;
-  }
-
-  .badges-grid {
-    gap: 1rem;
-    padding: 0.5rem;
-  }
-
-  .certifications .heading {
-    font-size: 26px;
-    margin-bottom: 1.5rem;
-  }
-
-  .badge-card {
-    width: 130px;
-    height: 160px;
-  }
-
-  .badge-image-wrapper {
-    height: 100px;
+    height: 125px;
   }
 
   .badge-info {
-    padding: 0.8rem;
+    padding: 0.9rem;
   }
 
   .badge-name {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
 }
