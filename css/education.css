@@ -23,13 +23,6 @@
   flex: 1 1 40rem;
 }
 
-.education-column .title {
-  position: relative;
-  display: inline-block;
-  font-size: 2.5rem;
-  margin: 0 0 1.5rem 2rem;
-}
-
 /* Education Box Timeline */
 .education-column .education-box {
   position: relative;

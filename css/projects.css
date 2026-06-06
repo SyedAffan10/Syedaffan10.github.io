@@ -178,20 +178,6 @@
   font-size: 1rem;
 }
 
-/* Animation Enhancements */
-.project-card .animate {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideInUp 0.8s ease forwards;
-}
-
-@keyframes slideInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* Responsive Design */
 @media (max-width: 1200px) {
   .projects-grid {
