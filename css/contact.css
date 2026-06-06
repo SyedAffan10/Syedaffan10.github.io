@@ -28,18 +28,13 @@
   min-height: 4rem; /* Minimum height for very small screens */
 }
 
-/* Override width for phone field to ensure it stays at 49% */
-.contact form .input-box .input-field.phone-field {
-  width: 49% !important;
-  display: flex;
-  flex-direction: row;
-  gap: 0;
-  align-items: stretch;
+/* Full-width field (e.g. Subject) */
+.contact form .input-box .input-field.input-field-full {
+  width: 100%;
 }
 
 .contact form .input-box .input-field input,
-.contact form .textarea-field textarea,
-.contact form .input-box .input-field select {
+.contact form .textarea-field textarea {
   width: 100%;
   height: 100%;
   padding: 1.5rem;
@@ -59,64 +54,9 @@
 }
 
 .contact form .input-box .input-field input:focus,
-.contact form .textarea-field textarea:focus,
-.contact form .input-box .input-field select:focus {
+.contact form .textarea-field textarea:focus {
   border-color: var(--main-color);
   box-shadow: 0 0 0 2px rgba(0, 238, 247, 0.2);
-}
-
-/* Phone field with country code */
-.contact form .input-box .phone-field {
-  display: flex;
-  gap: 0;
-  align-items: stretch;
-  position: relative;
-}
-
-.contact form .input-box .phone-field select {
-  width: 40%;
-  min-width: 120px;
-  background-color: var(--bg-color);
-  cursor: pointer;
-  outline: none;
-  border: 0.2rem solid var(--main-color);
-  border-right: none;
-  border-radius: 0.6rem 0 0 0.6rem;
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  color: var(--text-color);
-}
-
-.contact form .input-box .phone-field select:focus {
-  border-color: var(--main-color);
-  box-shadow: 0 0 0 2px rgba(0, 238, 247, 0.2);
-}
-
-.contact form .input-box .phone-field select option {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  padding: 0.5rem;
-}
-
-.contact form .input-box .phone-field input[type="tel"] {
-  width: 60%;
-  border: 0.2rem solid var(--main-color);
-  border-left: none;
-  border-radius: 0 0.6rem 0.6rem 0;
-  padding: 1.5rem;
-  font-size: 1.6rem;
-  color: var(--text-color);
-  background-color: transparent;
-}
-
-.contact form .input-box .phone-field input[type="tel"]:focus {
-  border-color: var(--main-color);
-  box-shadow: 0 0 0 2px rgba(0, 238, 247, 0.2);
-  outline: none;
-}
-
-.contact form .input-box .phone-field .focus {
-  display: none;
 }
 
 .contact form .focus {
@@ -266,35 +206,6 @@
     width: 100%;
     margin: 1rem 0;
   }
-  
-  .contact form .input-box .input-field.phone-field {
-    width: 100% !important;
-  }
-  
-  .contact form .input-box .phone-field {
-    flex-direction: row;
-    gap: 0.5rem;
-    align-items: stretch;
-  }
-  
-  .contact form .input-box .phone-field select {
-    width: 35%;
-    min-width: 110px;
-    border: 0.2rem solid var(--main-color);
-    border-right: none;
-    border-radius: 0.6rem 0 0 0.6rem;
-    font-size: 1.4rem;
-    padding: 1rem;
-  }
-  
-  .contact form .input-box .phone-field input[type="tel"] {
-    width: 65%;
-    border: 0.2rem solid var(--main-color);
-    border-left: none;
-    border-radius: 0 0.6rem 0.6rem 0;
-    font-size: 1.4rem;
-    padding: 1rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -312,36 +223,9 @@
     margin: 0.8rem 0;
     height: 5.5rem;
   }
-  
-  .contact form .input-box .input-field.phone-field {
-    width: 100% !important;
-  }
-  
-  .contact form .input-box .phone-field {
-    flex-direction: column;
-    gap: 0.8rem;
-    align-items: stretch;
-  }
-  
-  .contact form .input-box .phone-field select {
-    width: 100%;
-    border: 0.2rem solid var(--main-color);
-    border-radius: 0.6rem;
-    font-size: 1.4rem;
-    padding: 1.2rem;
-  }
-  
-  .contact form .input-box .phone-field input[type="tel"] {
-    width: 100%;
-    border: 0.2rem solid var(--main-color);
-    border-radius: 0.6rem;
-    font-size: 1.4rem;
-    padding: 1.2rem;
-  }
-  
+
   .contact form .input-box .input-field input,
-  .contact form .textarea-field textarea,
-  .contact form .input-box .input-field select {
+  .contact form .textarea-field textarea {
     font-size: 1.4rem;
     padding: 1.2rem;
   }
@@ -377,18 +261,11 @@
   }
   
   .contact form .input-box .input-field input,
-  .contact form .textarea-field textarea,
-  .contact form .input-box .input-field select {
+  .contact form .textarea-field textarea {
     font-size: 1.3rem;
     padding: 1rem;
   }
-  
-  .contact form .input-box .phone-field select,
-  .contact form .input-box .phone-field input[type="tel"] {
-    font-size: 1.3rem;
-    padding: 1rem;
-  }
-  
+
   .contact form .btn-box.btns .btn {
     padding: 1rem 2rem;
     font-size: 1.3rem;
@@ -406,18 +283,11 @@
   }
   
   .contact form .input-box .input-field input,
-  .contact form .textarea-field textarea,
-  .contact form .input-box .input-field select {
+  .contact form .textarea-field textarea {
     font-size: 1.2rem;
     padding: 0.8rem;
   }
-  
-  .contact form .input-box .phone-field select,
-  .contact form .input-box .phone-field input[type="tel"] {
-    font-size: 1.2rem;
-    padding: 0.8rem;
-  }
-  
+
   .contact form .textarea-field {
     margin: 0.5rem 0 1.5rem;
   }
@@ -442,14 +312,7 @@
   }
   
   .contact form .input-box .input-field input,
-  .contact form .textarea-field textarea,
-  .contact form .input-box .input-field select {
-    font-size: 1.1rem;
-    padding: 0.7rem;
-  }
-  
-  .contact form .input-box .phone-field select,
-  .contact form .input-box .phone-field input[type="tel"] {
+  .contact form .textarea-field textarea {
     font-size: 1.1rem;
     padding: 0.7rem;
   }
