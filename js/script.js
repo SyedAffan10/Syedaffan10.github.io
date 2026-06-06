@@ -336,7 +336,7 @@ function createBadgeCard(fileName, credlyUrl) {
     
     card.innerHTML = `
         <div class="badge-image-wrapper">
-            <img src="images/badges/${fileName}" alt="${badgeName}" onerror="this.src='https://via.placeholder.com/150x120?text=Badge'">
+            <img src="images/badges/${fileName}" alt="${badgeName}" loading="lazy" onerror="this.onerror=null;this.src=&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='120'%3E%3Crect width='100%25' height='100%25' fill='%23112e42'/%3E%3Ctext x='50%25' y='50%25' fill='%2300abf0' font-family='Arial' font-size='14' text-anchor='middle' dominant-baseline='middle'%3EBadge%3C/text%3E%3C/svg%3E&quot;">
         </div>
         <div class="badge-info">
             <div class="badge-name">${badgeName}</div>

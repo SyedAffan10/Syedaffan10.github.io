@@ -36,8 +36,12 @@
   background: var(--bg-color);
   border: 2px solid transparent;
   box-shadow: 0 5px 20px rgba(0, 255, 200, 0.1);
-  animation: badgeLoad 0.6s ease-out forwards;
-  opacity: 0;
+  /* Cards are visible by default; the animation is a progressive
+     enhancement. `backwards` applies the hidden start-state only during
+     the stagger delay, so badges never get stuck invisible if the
+     animation is throttled (e.g. page loaded in a background tab). */
+  animation: badgeLoad 0.6s ease-out backwards;
+  opacity: 1;
 }
 
 @keyframes badgeLoad {
@@ -177,7 +181,8 @@
 
   .badges-grid {
     gap: 1.2rem;
-    padding: 0
+    padding: 0;
+  }
 
   .badge-info {
     padding: 0.9rem;
