@@ -41,6 +41,100 @@
     <link rel="manifest" href="site.webmanifest" />
     <meta name="theme-color" content="#081b29" />
 
+    <!-- Structured data: lets Google treat this as a person entity, not just a page -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://syedaffan.dev/#person",
+          "name": "Syed Affan Hussain",
+          "givenName": "Syed Affan",
+          "familyName": "Hussain",
+          "url": "https://syedaffan.dev/",
+          "image": "https://syedaffan.dev/images/profile.jpg",
+          "jobTitle": "Artificial Intelligence Engineer",
+          "description": "AI Engineer specializing in Machine Learning, Computer Vision, Generative AI, LLMs, and RAG systems, with 4+ years building production AI solutions.",
+          "email": "mailto:syedaffan.dev@gmail.com",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "EDR Software GmbH",
+            "url": "https://www.edr-software.com/"
+          },
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "Friedrich-Alexander-Universität Erlangen-Nürnberg",
+            "url": "https://www.fau.eu/"
+          },
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Sir Syed University of Engineering and Technology",
+            "url": "https://www.ssuet.edu.pk/"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Munich",
+            "addressRegion": "Bavaria",
+            "addressCountry": "DE"
+          },
+          "knowsAbout": [
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Deep Learning",
+            "Computer Vision",
+            "Natural Language Processing",
+            "Generative AI",
+            "Large Language Models",
+            "Retrieval-Augmented Generation",
+            "Prompt Engineering",
+            "MLOps",
+            "Python",
+            "PyTorch",
+            "TensorFlow",
+            "Keras",
+            "scikit-learn",
+            "OpenCV",
+            "LangChain",
+            "LangGraph",
+            "Hugging Face",
+            "Vector Databases",
+            "FastAPI",
+            "Django",
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "Microsoft Azure",
+            "Google Cloud Platform"
+          ],
+          "sameAs": [
+            "https://www.linkedin.com/in/syedaffan10",
+            "https://github.com/SyedAffan10",
+            "https://x.com/SyedAffan0",
+            "https://www.facebook.com/affan08",
+            "https://www.instagram.com/affan_shabbir"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://syedaffan.dev/#website",
+          "url": "https://syedaffan.dev/",
+          "name": "Syed Affan Hussain | Artificial Intelligence Engineer",
+          "inLanguage": "en",
+          "publisher": { "@id": "https://syedaffan.dev/#person" }
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://syedaffan.dev/#webpage",
+          "url": "https://syedaffan.dev/",
+          "isPartOf": { "@id": "https://syedaffan.dev/#website" },
+          "about": { "@id": "https://syedaffan.dev/#person" },
+          "primaryImageOfPage": "https://syedaffan.dev/images/og-image.png"
+        }
+      ]
+    }
+    </script>
+
     <link rel="stylesheet" href="css/header.css" />
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/about.css" />
