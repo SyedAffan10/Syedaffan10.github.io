@@ -22,6 +22,9 @@
 
 .about-img img {
   width: 90%;
+  /* the img carries width/height attrs for CLS; without this the height
+     attribute lands as a presentational hint and stretches the circle */
+  height: auto;
   border-radius: 50%;
   border: 0.2rem solid var(--main-color);
 }

@@ -1,0 +1,13 @@
+{
+  "name": "Syed Affan Hussain — Artificial Intelligence Engineer",
+  "short_name": "Syed Affan",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#081b29",
+  "theme_color": "#081b29",
+  "icons": [
+    { "src": "/images/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/images/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
