@@ -221,6 +221,13 @@
   overflow: hidden;
 }
 
+/* inline SVG icons track the font-size and colour of their <i> siblings */
+.social-icons a .icon-x {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}
+
 .social-icons a::before {
   content: '';
   position: absolute;

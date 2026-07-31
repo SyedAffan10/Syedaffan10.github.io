@@ -2,12 +2,12 @@
   <h1>🚀 Syed Affan Hussain - AI Engineer Portfolio</h1>
   <p><strong>A Modern, Interactive Portfolio Showcasing AI Engineering Expertise & Full-Stack Development</strong></p>
   
-  [![Deploy Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)](https://syedaffan10.github.io/)
+  [![Deploy Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)](https://syedaffan.dev/)
   [![GitHub](https://img.shields.io/badge/GitHub-SyedAffan10-181717?style=for-the-badge&logo=github)](https://github.com/SyedAffan10)
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-SyedAffan10-0A66C2?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/syedaffan10)
   
   ### 📸 Portfolio Preview
-  ![Portfolio Demo](Demo.png)
+  ![Portfolio Demo](images/demo.png)
   
   **[🌐 View Live Portfolio →](https://syedaffan.dev/)**
 </div>

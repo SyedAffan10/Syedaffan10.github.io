@@ -90,13 +90,22 @@
   width: 100%;
 }
 
-.footer-social a i {
+.footer-social a i,
+.footer-social a .icon-x {
   font-size: 2.4rem;
   color: var(--bg-color);
   transition: 0.5s;
 }
 
-.footer-social a:hover i {
+.footer-social a .icon-x {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+  display: block;
+}
+
+.footer-social a:hover i,
+.footer-social a:hover .icon-x {
   color: var(--main-color);
 }
 
